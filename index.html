@@ -1,0 +1,105 @@
+// 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 🎉</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 600% 600%;
+    animation: bg 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  @keyframes bg {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+  }
+
+  .card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    animation: pop 1s ease;
+  }
+
+  @keyframes pop {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+  }
+
+  h1 {
+    font-size: 48px;
+    color: #ff4081;
+    animation: bounce 1.5s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+  }
+
+  input {
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid #ff4081;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background: #ff4081;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .name {
+    font-size: 36px;
+    color: #673ab7;
+    margin-top: 20px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🎉 Happy Birthday 🎂</h1>
+
+  <input id="nameInput" placeholder="Enter your name">
+  <br>
+  <button onclick="showName()">Celebrate 🎈</button>
+
+  <div class="name" id="nameDisplay"></div>
+</div>
+
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function showName() {
+    const name = document.getElementById("nameInput").value;
+    document.getElementById("nameDisplay").innerHTML = "🎁 " + name + " 🎁";
+  }
+</script>
+
+</body>
+</html>
